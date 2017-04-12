@@ -1,0 +1,21 @@
+{
+  "name": "url-shortener-microservice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nf start",
+    "watch": "pm2 start index.js --watch -f; pm2 logs index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "ava": "^0.19.1",
+    "foreman": "^2.0.0",
+    "pm2": "^2.4.4"
+  }
+}
