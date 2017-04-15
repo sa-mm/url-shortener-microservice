@@ -7,6 +7,7 @@ var app = express()
 
 dotenv.config()
 
+app.enable('trust proxy')
 app.set('port', (process.env.PORT || 3000))
 
 app.get('/', function (req, res) {
