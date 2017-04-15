@@ -9,7 +9,26 @@
             <h1 class="header">
                 URL Shortener Microservice
             </h1>
-            <p>bye</p>
+            <h2>User Stories</h2>
+            <ul>
+                <li>I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.</li>
+                <li>If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.</li>
+                <li>When I visit that shortened URL, it will redirect me to my original link.</li>
+            </ul>
+            <h2>Example Creation Input</h2>
+            <code>https://little-url.herokuapp.com/new/https://www.google.com</code>
+            <code>https://little-url.herokuapp.com/new/http://foo.com:80</code>
+
+            <h2>Example Creation Output</h2>
+            <code>{ "original_url":"http://foo.com:80", "short_url":"https://little-url.herokuapp.com/8170" }</code>
+
+            <h2>Usage</h2>
+            <code>https://little-url.herokuapp.com/2871</code>
+
+            <h2>Redirect</h2>
+            <code>https://www.google.com/</code>
+
+
         </div>
     </body>
 </html>

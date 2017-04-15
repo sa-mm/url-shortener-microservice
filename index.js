@@ -1,7 +1,11 @@
 var express = require('express')
 var path = require('path')
+var dotenv = require('dotenv')
 var shortener = require('./lib/shortener.js')
+var checkAndRedirect = require('./lib/checkAndRedirect.js')
 var app = express()
+
+dotenv.config()
 
 app.set('port', (process.env.PORT || 3000))
 
@@ -10,8 +14,16 @@ app.get('/', function (req, res) {
 })
 
 app.get('/new/*', function (req, res) {
-  var out = shortener(req.path)
-  res.send(out)
+  console.log(req.hostname)
+  console.log(req.host)
+  console.log(req.protocol)
+  console.log(req.url)
+  shortener(req, res)
+  // res.send(out)
+})
+
+app.get('/*', function (req, res) {
+  checkAndRedirect(req, res)
 })
 
 app.listen(app.get('port'), function () {
