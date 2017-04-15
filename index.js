@@ -18,6 +18,7 @@ app.get('/new/*', function (req, res) {
   console.log(req.host)
   console.log(req.protocol)
   console.log(req.url)
+  console.log(req)
   shortener(req, res)
   // res.send(out)
 })
