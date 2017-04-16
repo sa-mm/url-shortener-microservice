@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nf start",
+    "start": "node index.js",
+    "start_old": "nf start",
     "watch": "pm2 start index.js --watch -f; pm2 logs index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
