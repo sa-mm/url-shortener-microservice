@@ -14,6 +14,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
 
+app.get('/script.js', function (req, res) {
+  res.sendFile(path.join(__dirname, '/script.js'))
+})
+
 app.get('/new/*', function (req, res) {
   console.log(req.hostname)
   console.log(req.host)
