@@ -10,22 +10,18 @@ dotenv.config()
 app.enable('trust proxy')
 app.set('port', (process.env.PORT || 3000))
 
+const publicDir = path.join(__dirname, 'public')
+
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/index.html'))
+  res.sendFile(path.join(publicDir, '/index.html'))
 })
 
 app.get('/script.js', function (req, res) {
-  res.sendFile(path.join(__dirname, '/script.js'))
+  res.sendFile(path.join(publicDir, '/script.js'))
 })
 
 app.get('/new/*', function (req, res) {
-  console.log(req.hostname)
-  console.log(req.host)
-  console.log(req.protocol)
-  console.log(req.url)
-  console.log(req)
   shortener(req, res)
-  // res.send(out)
 })
 
 app.get('/*', function (req, res) {
